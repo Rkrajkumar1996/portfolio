@@ -1,0 +1,134 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ background-image: url('mathbg.jpg');
+   height: 100%;
+   background-position: fill;
+   background-repeat: no-repeat;
+   background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat {
+  background: linear-gradient(120deg, rgba(23, 190, 187, 1), rgba(240, 166, 202, 1));
+  width: 90%;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  background-image: url('https://cdn.pixabay.com/photo/2021/01/21/15/11/geometric-5933198_960_720.png');
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #333;
+  word-wrap: break-word;
+  animation: fadeIn 0.5s ease;
+}
+
+.user-message {
+  background-color: #d3eaf5;
+  text-align: right;
+  max-width: 80%;
+  align-self: flex-end;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.bot-message {
+  text-align: left;
+  max-width: 80%;
+  align-self: flex-start;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.user-input {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user-input input {
+  flex: 1;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 10px 0 0 10px;
+}
+
+.user-input button {
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Message animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
