@@ -1,3 +1,4 @@
+// JavaScript
 const chatOutput = document.getElementById('chat-output');
 const userMessageInput = document.getElementById('user-message');
 
@@ -16,10 +17,25 @@ function sendMessage() {
 
     // Perform math calculations
     try {
-      const result = math.evaluate(userMessage);
+      let result = math.evaluate(userMessage);
+
+      // Round the result if it's a floating-point number
+      if (typeof result === 'number' && result % 1 !== 0) {
+        result = result.toFixed(2);
+      }
+
       appendMessage('Bot', result);
     } catch (error) {
-      appendMessage('Bot', 'Invalid expression.');
+      let errorMessage = 'Bot: Error evaluating the expression.';
+
+      // Provide more specific error messages
+      if (error instanceof SyntaxError) {
+        errorMessage = 'Bot: Invalid expression. Please check your input.';
+      } else if (error instanceof TypeError) {
+        errorMessage = 'Bot: Invalid math operation. Please check your input.';
+      }
+
+      appendMessage('Bot', errorMessage);
     }
   }
 }
